@@ -1,7 +1,7 @@
 # HSBC_Auth
 hsbc hometask of authentication and authorization
 
-main functions in AuthApi
+Main functions in AuthApi (AuthApi achieves its all functions by calling three services AuthService, UserService and RoleService)
 1. boolean createUser(String username, String password) throws Exception;
 
 2. boolean deleteUser(String username);
@@ -20,24 +20,29 @@ main functions in AuthApi
 
 9. List<Role> myAllRoles(String token);
 
+
 Main Entities:
 1. User: contains all user information
 2. Role: contains all role information
 
 Main services:
-1. AuthService: do the token generate and invalidate
+1. AuthService: do the token generation and invalidate
+   
 2. UserService: functions with users 
-including: create user, delete user, user login in check, add role to user, check user roles, get all user roles
+including: create user, delete user, user login check, add role to user, check user role, get all user roles
+
 3. RoleService: functions with roles
-including: create roles, delete role, get role by roleName
-4. AuthApi: All main business api provided, how the interface is designed.
+including: create role, delete role, get role by roleName
+
 
 Main utils:
-1. JwtUtils: do token generation using JWT, and token verify
+1. JwtUtils: do token generation using JWT, and token verification
+   
 2. PasswordUtil: do password encoding by hash and password match
+  
 3. StringUtils: utility of String
 
-External libraries:
-1. java-jwt: this is used for the jwt token generation after user login.
+External libraries used:
+1. java-jwt: this is used for the token generation with expire time and username claimed after user login.
 2. junit and mockito-core for unit test
 
